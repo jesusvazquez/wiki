@@ -1,4 +1,4 @@
-= Configuration =
+# Configuration
 
 First, you need to create a different yaml configuration for
 this. This is necessary because the series might be duplicate from the
@@ -6,18 +6,18 @@ series torrents download. We will call it 'subs-config.yml'.
 
 This is the content of my subs-config.yml
 
-{{{
+```
 feeds:
   series-subs:
     text:
       url: http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=legendas
       entry:
         title: <title>legendas. Legenda ([^ ]*).*
-        url: (http\://t.co/[^<]*)</title>
+        url: (http\://t.co/[^<](/^<)*)</title>
     manipulate:
       - title:
           replace:
-            regexp: '[\.-]'
+            regexp: '[\.-](/\.-)'
             format: ' '
     series:
       - south park
@@ -46,7 +46,7 @@ feeds:
       smtp_username: username
       smtp_password: password
       smtp_tls: yes
-}}}
+```
 
 What we do here is that we download the rss from legendastv twitter
 and separate the entries regexp'ing their titles and the description
@@ -70,7 +70,7 @@ Mine download-sub.sh uses wget and other Linux utilities to download,
 so you may have a hard time using it under Windows, though cygwin
 might help you there. Here it is download-sub.sh:
 
-{{{
+```
 #!/bin/bash
 
 echo Logging in
@@ -87,7 +87,7 @@ fi
 
 echo Downloading URL $1
 
-SUBURL=`/usr/bin/wget --load-cookies /home/torrents/.flexget/login.txt $1 -O /dev/null |& sed -n "s/Location: \(\/info\.php?d=[a-z0-9A-Z]*\).*/http:\/\/legendas.tv\1\&c=1/ p"`
+SUBURL=`/usr/bin/wget --load-cookies /home/torrents/.flexget/login.txt $1 -O /dev/null |& sed -n "s/Location: \(\/info\.php?d=[a-z0-9A-Z](/a-z0-9A-Z)*\).*/http:\/\/legendas.tv\1\&c=1/ p"`
 
 if [ "$?" -ne "0" ]; then
     echo "Wget returned code $?"
@@ -105,7 +105,7 @@ echo Downloading $SUBURL
 
 RANDOMFILE=subtitle_$RANDOM
 
-SUBNAME=`/usr/bin/wget --load-cookies /home/torrents/.flexget/login.txt $SUBURL -O ~/.flexget/subs-temp/$RANDOMFILE |& sed -n "s/^Location: legenda[^\/]*\/\([^ ]*\).*/\1/ p"`
+SUBNAME=`/usr/bin/wget --load-cookies /home/torrents/.flexget/login.txt $SUBURL -O ~/.flexget/subs-temp/$RANDOMFILE |& sed -n "s/^Location: legenda[^\/](/^\/)*\/\([^ ]*\).*/\1/ p"`
 
 if [ "$?" -ne "0" ]; then
     echo "Wget returned code $?"
@@ -127,7 +127,7 @@ if [ "$?" -ne "0" ]; then
 fi
 
 exit 0
-}}}
+```
 
 
 Which downloads the subtitle and moves it to

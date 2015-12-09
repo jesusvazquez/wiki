@@ -1,2 +1,3 @@
-== Watched ==
-The watched option has been replaced by [wiki:Plugins/series/begin begin].
+## Watched
+
+The watched option has been replaced by [begin](/Plugins/series/begin).

@@ -1,37 +1,37 @@
-= Series recipes =
+# Series recipes
 
-=== Good starting points ===
+### Good starting points
 
-* [wiki:Cookbook/Series/SimpleSeries Very basic series configuration]
-* [wiki:Cookbook/Series/Preset Manage series and multiple feeds easily]
-* [wiki:Cookbook/Series/SetPath Set torrent client download path from series name]
+* [Very basic series configuration](/Cookbook/Series/SimpleSeries)
+* [Manage series and multiple feeds easily](/Cookbook/Series/Preset)
+* [Set torrent client download path from series name](/Cookbook/Series/SetPath)
 
-=== More advanced recipes ===
+### More advanced recipes
 
-* [wiki:Cookbook/Series/Search Have FlexGet search for the episodes you need rather than monitoring an RSS feed]
-* [wiki:Cookbook/Series/SeedDB Get your FlexGet series database started with the files you already have]
-* [wiki:Cookbook/Series/Sort Sort Downloads with FlexGet]
-* [wiki:Cookbook/Series/CleanTrakt Remove ended shows you have already collected from a trakt list]
-* [wiki:Cookbook/Series/TraktBegin Set the first episode of series to be downloaded based on your trakt watched (or collected) status.]
-* [wiki:Cookbook/Series/DelugeMovedone Set deluge options trough series groups]
-* [wiki:Cookbook/Series/Advanced Advanced example with setting groups and qualities]
-* [wiki:Cookbook/Series/DelugeThetvdbSeries Advanced deluge/thetvdb config showing many features]
-* [wiki:Cookbook/Series/AdvancedTransmissionAndDownloadManagement Download series with transmission (advanced)]
-* [wiki:Cookbook/Series/PremieresGenres Get series premieres with genre filtering]
-* [wiki:Cookbook/Urlrewrite/nzbclub Fix the nzbclub feed to get series]
-* [wiki:Cookbook/Movies/TraktUpload Upload movie/tv collection to trakt.tv]
-* [wiki:Cookbook/Series/SeriesSabNZBd Set category from series name with sabnzbd]
-* [wiki:Cookbook/Series/next-episode Use next-episode.net as input for import_series]
-* [wiki:Cookbook/Series/SeriesPresetMultipleRSStoTransmission Transmission - Single series list in one template from multiple RSS feeds to Transmission with propers, quality, separate path per series]
-* [wiki:Cookbook/Series/SeriesTransmissionshowRSS Transmission with showRSS: manage your series from showRSS website without messing with the configuration file]
-* [wiki:Cookbook/Series/PlexToPlexDownload Download episodes from a remote PMS by using local PMS as input]
-* [wiki:Cookbook/Series/DiscoverSeriesWithNewznab Download nzb for series episodes from a newznab website]
-* [wiki:Cookbook/Series/RemoveByExtension Remove and forget episodes by file extension]
-* [wiki:Cookbook/Series/sync_series Remove gaps in your series database by searching a folder for episodes you already downloaded]
+* [Have FlexGet search for the episodes you need rather than monitoring an RSS feed](/Cookbook/Series/Search)
+* [Get your FlexGet series database started with the files you already have](/Cookbook/Series/SeedDB)
+* [Sort Downloads with FlexGet](/Cookbook/Series/Sort)
+* [Remove ended shows you have already collected from a trakt list](/Cookbook/Series/CleanTrakt)
+* [Set the first episode of series to be downloaded based on your trakt watched (or collected) status.](/Cookbook/Series/TraktBegin)
+* [Set deluge options trough series groups](/Cookbook/Series/DelugeMovedone)
+* [Advanced example with setting groups and qualities](/Cookbook/Series/Advanced)
+* [Advanced deluge/thetvdb config showing many features](/Cookbook/Series/DelugeThetvdbSeries)
+* [Download series with transmission (advanced)](/Cookbook/Series/AdvancedTransmissionAndDownloadManagement)
+* [Get series premieres with genre filtering](/Cookbook/Series/PremieresGenres)
+* [Fix the nzbclub feed to get series](/Cookbook/Urlrewrite/nzbclub)
+* [Upload movie/tv collection to trakt.tv](/Cookbook/Movies/TraktUpload)
+* [Set category from series name with sabnzbd](/Cookbook/Series/SeriesSabNZBd)
+* [Use next-episode.net as input for import_series](/Cookbook/Series/next-episode)
+* [Transmission - Single series list in one template from multiple RSS feeds to Transmission with propers, quality, separate path per series](/Cookbook/Series/SeriesPresetMultipleRSStoTransmission)
+* [Transmission with showRSS: manage your series from showRSS website without messing with the configuration file](/Cookbook/Series/SeriesTransmissionshowRSS)
+* [Download episodes from a remote PMS by using local PMS as input](/Cookbook/Series/PlexToPlexDownload)
+* [Download nzb for series episodes from a newznab website](/Cookbook/Series/DiscoverSeriesWithNewznab)
+* [Remove and forget episodes by file extension](/Cookbook/Series/RemoveByExtension)
+* [Remove gaps in your series database by searching a folder for episodes you already downloaded](/Cookbook/Series/sync_series)
  
-== Resources ==
+## Resources
 
-''Torrent feeds''
+*Torrent feeds*
 
  * http://rss.bt-chat.com/?group=3
  * http://showrss.info/feeds/all.rss
@@ -41,14 +41,14 @@
  * http://extratorrent.cc/rss.xml?cid=8
  * http://feeds.feedburner.com/eztv-rss-atom-feeds?format=xml
 
-''NZB Feeds''
+*NZB Feeds*
 
- * [http://www.nzbs.org/ www.nzbs.org] (See footnote^1^)
+ * [www.nzbs.org](http://www.nzbs.org/) (See footnote^1^)
 
-'''Footnotes'''
+**Footnotes**
 
- 1. The RSS URL for '''www.nzbs.org''' needs authentication data.[[BR]]
- First you need to [http://nzbs.org/user.php?action=register register] with the site.[[BR]]
- Then follow these [http://nzbs.org/index.php?action=rss instructions].[[BR]]
- Example: !http://nzbs.org/rss.php?type=1&i=<uid>&h=<hash>&num=100&dl=1[[BR]]
- Both the '''i''' and '''h''' values are required and account-specific.[[BR]] 
+ 1. The RSS URL for **www.nzbs.org** needs authentication data.  
+ First you need to [register](http://nzbs.org/user.php?action=register) with the site.  
+ Then follow these [instructions](http://nzbs.org/index.php?action=rss).  
+ Example: !http://nzbs.org/rss.php?type=1&i=<uid>&h=<hash>&num=100&dl=1  
+ Both the **i** and **h** values are required and account-specific.[[BR]] 

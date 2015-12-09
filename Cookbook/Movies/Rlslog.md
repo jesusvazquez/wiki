@@ -1,8 +1,8 @@
-= Download movies from !RlsLog =
+# Download movies from RlsLog
 
-Uses [http://imdb.com imdb] details to filter out "bad" movies. Customize to your likings.
+Uses [imdb](http://imdb.com) details to filter out "bad" movies. Customize to your likings.
 
-{{{
+```
 feeds:
   rlslog_dvdrips:
     rlslog: http://www.rlslog.net/category/movies/dvdrip/
@@ -17,6 +17,6 @@ feeds:
         - music
         - biography
     download: ~/torrents/
-}}}
+```
 
-Uses plugins: [wiki:Plugins/rlslog rlslog], [wiki:Plugins/imdb imdb], [wiki:Plugins/download download]
+Uses plugins: [rlslog](/Plugins/rlslog), [imdb](/Plugins/imdb), [download](/Plugins/download)

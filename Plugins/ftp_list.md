@@ -1,9 +1,10 @@
 
-== ftp_list ==
+## ftp_list
+
 Generate entries from a remote FTP server
 
-'''Configuration:'''
-{{{
+**Configuration:**
+```
 ftp_list:
   config:
     name: <ftp name>
@@ -19,4 +20,4 @@ ftp_list:
     - <directory 1>
     - <directory 2>
     - ....
-}}}
+```

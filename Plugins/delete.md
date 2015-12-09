@@ -1,21 +1,21 @@
-= Delete =
+# Delete
 
-''TODO: Improve documentation''
+*TODO: Improve documentation*
 
 Syntax:
 
-{{{
+```
 delete:
-  [allow_dir]: allows or denies to operate on entries pointing to directories
-  [along]: delete additional files such as subtitles
-  [clean_source]: delete source directory if it has less MB left than given after delete
-}}}
+  [allow_dir](/allow_dir): allows or denies to operate on entries pointing to directories
+  [along](/along): delete additional files such as subtitles
+  [clean_source](/clean_source): delete source directory if it has less MB left than given after delete
+```
 
 [] = optional
 
 Here is an example of usage in a more comprehensive context
 
-{{{
+```
 tasks:
   delete_old_stuff:
     filesystem:
@@ -28,4 +28,4 @@ tasks:
       along:
         - sub
         - srt
-}}}
+```

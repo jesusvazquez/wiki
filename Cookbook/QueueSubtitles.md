@@ -5,17 +5,17 @@ Basicly, the series filter should keep two different databases, one for the vide
 This assumes that movies releases are seen by flexget before the subtitles releases, which is usually the case.
 
 tv.yml:
-{{{
+```
 series:
   hdtv:
     - Weeds
     - Heroes
     - Lost
     - The IT Crowd
-}}}
+```
 
 series.yml
-{{{
+```
 templates:
   tv:
     include: tv.yml
@@ -25,10 +25,10 @@ feeds:
     rss: http:// ...
     template: tv
     download: ~/Download
-}}}
+```
 
 movies.yml
-{{{
+```
 feeds:
   movies:
     rss: http:// ...
@@ -37,10 +37,10 @@ feeds:
       ...
     download: ~/Download
     exec: flexget -c legendas.yml --imdb-queue add %(imdb_url)s
-}}}
+```
 
 legendas.yml
-{{{
+```
 templates:
   tv:
     include: tv.yml
@@ -69,4 +69,4 @@ feeds:
     imdb_queue: yes
     download: ~/Download
 
-}}}
+```

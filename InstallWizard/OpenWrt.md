@@ -1,69 +1,70 @@
 OpenWrt is described as a Linux distribution for embedded devices.
-[[BR]]
-[[BR]]
+  
+  
 
-= Set up environment =
+# Set up environment
 
-!FlexGet and dependencies currently need ~7MB of free space, plus the stuff you install with opkg (another ~3MB). It can be trimmed down, because there are dependencies only needed for future webui so it would be possible to run FlexGet without them. However easy_install will install them too.
+FlexGet and dependencies currently need ~7MB of free space, plus the stuff you install with opkg (another ~3MB). It can be trimmed down, because there are dependencies only needed for future webui so it would be possible to run FlexGet without them. However easy_install will install them too.
 
-== Python ==
+## Python
 
 Install python with sqlite3 and yaml. Python-openssl is only necessary for https connections, python-expat for the nzb-plugin.
 
-{{{
+```
 opkg install python python-sqlite3 pyyaml
 opkg install python-sqlite
 opkg install python-expat
 opkg install python-openssl
 
 opkg install python-bzip2
-}}}
+```
 
 
-== easy_install ==
+## easy_install
 
-{{{
+```
 opkg install distribute
-}}}
+```
 
-== pip ==
-[http://www.pip-installer.org/en/latest/usage.html pip usage:]
+## pip
 
-{{{
+[pip usage:](http://www.pip-installer.org/en/latest/usage.html)
+
+```
 easy_install pip
-}}}
+```
 
 
-== Install ==
+## Install
 
 Run command:
 
-{{{
+```
 pip install flexget
-}}}
+```
 
 If you decide to unpack your packages on an external storage (**recommended**), use the following command: (this is needed if you get a 'No space left on device' error)
 
-{{{
+```
 pip install flexget -b /your/path/to/extstorage/tmp
-}}}
+```
 
 
-This will install !FlexGet and all additional components it requires.
+This will install FlexGet and all additional components it requires.
 
 If the installation fails (IOError's, End of file...), it's related to a full file system, review your extroot.
  
-== Verify installation ==
+## Verify installation
 
 Run command:
 
-{{{
+```
 # flexget -V
 FlexGet 1.0r2230
-}}}
+```
 
 
-== Alternate Install method for Flexget ==
+## Alternate Install method for Flexget
 
 In some cases, using pip to extract the tar on an external path might still not be enough to have enough space on the / partition of the router to be able to install flexget.
 
@@ -85,6 +86,6 @@ You can also put the above export command in the "startup" section of openWRT so
 
 
 
-== Continue ==
+## Continue
 
-[wiki:InstallWizard/Linux/Environment/FlexGet/Scheduling Scheduling]
+[Scheduling](/InstallWizard/Linux/Environment/FlexGet/Scheduling)

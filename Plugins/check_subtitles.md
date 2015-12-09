@@ -1,10 +1,10 @@
-= Check subtitles =
+# Check subtitles
 
-Set the '''subtitles''' field on all [wiki:Entry entries] about local files having subtitles. The field is a list of available languages.
+Set the **subtitles** field on all [entries](/Entry) about local files having subtitles. The field is a list of available languages.
 
-=== Example ===
+### Example
 
-{{{
+```
   check_subs:
     filesystem:
       path:
@@ -14,4 +14,4 @@ Set the '''subtitles''' field on all [wiki:Entry entries] about local files havi
     check_subtitles: yes
     if:
       - "subtitles and 'ita' in subtitles": accept
-}}}
+```

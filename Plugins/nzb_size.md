@@ -1,18 +1,18 @@
-= Nzb size =
+# Nzb size
 
-'''Removed in r1202, replaced by [wiki:Plugins/content_size content_size]'''
+**Removed in r1202, replaced by [content_size](/Plugins/content_size)**
 
-[[BR]]
-[[BR]]
-[[BR]]
+  
+  
+  
 
 
-=== Example: ===
+### Example:
 
-{{{
+```
 nzb_size:
   min: 12
   max: 1200
-}}}
+```
 
 Size is given in MB

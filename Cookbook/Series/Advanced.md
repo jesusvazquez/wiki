@@ -1,8 +1,8 @@
-= Advanced example =
+# Advanced example
 
 How to use most of the series plugin features, with template:
 
-{{{
+```
 templates:
   tv:
     series:
@@ -28,4 +28,4 @@ feeds:
     rss: http://example.com/feed-b.rss
     template: tv
 
-}}}
+```

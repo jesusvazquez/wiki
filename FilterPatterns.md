@@ -1,25 +1,24 @@
-{{{
-#!html
+
 <h1 style="color: red">To be removed in 1.0</h1>
-}}}
 
-See module [wiki:FilterRegexp regexp]
 
-= Patterns =
+See module [regexp](/FilterRegexp)
 
-[wiki:Entry Entries] matching any of the given regular expression are accepted. Non-matching entries are filtered.
+# Patterns
 
-=== Example ===
+[Entries](/Entry) matching any of the given regular expression are accepted. Non-matching entries are filtered.
 
-{{{
+### Example
+
+```
 patterns:
   - regular expression
   - another regular expression
-}}}
+```
 
-'''Notes:''' Regular expression is tested from [wiki:Entry] title '''and''' url. Regular expression is case-insensitive.
+**Notes:** Regular expression is tested from [Entry](/Entry) title **and** url. Regular expression is case-insensitive.
 
-== Advanced users: ==
+## Advanced users:
 
 It's also possible to specify custom download path for
 pattern and secondary regexp(s) that causes entry to be
@@ -27,7 +26,7 @@ filtered even when primary regexp matches entry.
 
 Examples:
 
-{{{
+```
 patterns:
   # simplest way to specify custom path
   - regexp1: ~/custom_path/
@@ -51,4 +50,4 @@ patterns:
   # Above examples can be also written as:
   - regexp2: {path: ~/custom_path/, not: regexp3}
   - regexp4: {not: [regexp5, regexp6]}
-}}}
+```

@@ -1,3 +1,3 @@
-= Renamed =
+# Renamed
 
-See [wiki:Plugins/emit_imdb_queue]
+See [Plugins/emit_imdb_queue](/Plugins/emit_imdb_queue)

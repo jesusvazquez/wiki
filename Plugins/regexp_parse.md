@@ -1,9 +1,9 @@
-= regexp_parse =
+# regexp_parse
 
 This plugin is designed to take input from a web resource or a file and parse the text via regexps supplied in the config file.
 
 Breakdown of config settings
-{{{
+```
 source: is a file or url to get the data from. You can specify a username:password
 
 sections: Takes a list of dicts that contain regexps to split the data up into sections.
@@ -23,10 +23,10 @@ keys: hold the keys that will be set in the entries
 #TODO: consider adding a set field that will set the field to a supplied value if no matches are found
 
 #TODO: consider a mode field that allows a growing list for a field instead of just setting to first match
-}}}
+```
 
 Example
-{{{
+```
 regexp_parse:
   source: http://username:password@ezrss.it/feed/
   sections:
@@ -35,7 +35,7 @@ regexp_parse:
   keys:
     title:
       regexps:
-        - {regexp: '(?<=<title><!\[CDATA\[).*?(?=\]\]></title>)'} #comment
+        - {regexp: '(?<=<title><!\[CDATA\[).*?(?=\](/).*?(?=\)\]></title>)'} #comment
     url:
       regexps:
         - {regexp: "magnet:.*?(?=])"}
@@ -47,4 +47,4 @@ regexp_parse:
       regexps:
         - {regexp: 'first custom regexps'}
         - {regexp: 'can't find first regexp so try this one'}
-}}}
+```

@@ -1,33 +1,35 @@
-'''Note:''' This config is currently outdated, and therefore slightly borked. Feel free to take inspiration from it, but it won't work 100% after copy-paste.
+**Note:** This config is currently outdated, and therefore slightly borked. Feel free to take inspiration from it, but it won't work 100% after copy-paste.
 
-== Intro ==
+## Intro
 
 Many private trackers have a rule that when a season is finished, all episodes are removed from it, and a season pack is created, often in a separate category like "Archive".
 
 This config effectively downloads all season packs of a show you are following.
 
-'''Pros:'''
+**Pros:**
 
 + Makes you able to watch a new show that already has a few seasons out, _without_ manually downloading the first couple of seasons.
 
 + Uses trakt.tv where you can add things you want to watch to your watchlist with ONE click. No more setting up RSS feeds and so on.
 
-'''Cons:'''
+**Cons:**
 
 -- Will always download season packs even if your other config has already downloaded all of the episodes in that season. (On the upside, most season packs are freeleech, so no real harm except bandwidth)
 
--- The contents of this config cannot be put into your main config, because it will screw up your database. use start parameter '''-c this.config.yml''' so it is 100% sure to use its own db.
+-- The contents of this config cannot be put into your main config, because it will screw up your database. use start parameter **-c this.config.yml** so it is 100% sure to use its own db.
 
 -- Config is part of a larger solution. You will have to adjust things to suit your solution.
 
-== How does it work? == 
+## How does it work?
+
 
 The config retrieves whatever TV Show is on your watchlist, and searches on torrent sites for <Name> <Season Number>. Example: Arrow 01
 
 As the titles are being manipulated from trakt.tv to remove all episode information, it becomes a "hack" for how to download season packs instead. (from Arrow S02E01 to Arrow 02)
 
-== The Season Packs Config using Trakt.tv ==
-{{{
+## The Season Packs Config using Trakt.tv
+
+```
 #Make sure to run as --discover-now --no-cache
 secrets: secrets.yml
 templates:
@@ -52,7 +54,7 @@ tasks:
       min: 3072
     regexp:
       reject:
-        - \.[sS]\d\d[eE]\d\d\.
+        - \.[sS](/sS)\d\d[eE](/eE)\d\d\.
         - \.FiX\.
         - FASTSUB #French
         - VOSTFR #French
@@ -75,16 +77,16 @@ tasks:
       settings:
         quality: 480p-720p <=hdtv
         identified_by: sequence
-        sequence_regexp: \b[S][0]?(\d+)\b
+        sequence_regexp: \b[S](/S)[0](/0)?(\d+)\b
         exact: yes
     manipulate:
       - title:
           replace:
-            regexp: '(?<=\.[Ss]\d\d)[eE]01(?=\.)' # Remove E01 from each episode and turn it into a "Season entry"
+            regexp: '(?<=\.[Ss](/Ss)\d\d)[eE](/eE)01(?=\.)' # Remove E01 from each episode and turn it into a "Season entry"
             format: ''
       - title:
           replace:
-            regexp: '.*([eE]0[^1]).*|.*[eE]([1-9]\d).*' # Remove any entry that is not the first episode of a season
+            regexp: '.*([eE](/eE)0[^1](/^1)).*|.*[eE](/eE)([1-9](/1-9)\d).*' # Remove any entry that is not the first episode of a season
             format: ''
     discover:
       what:
@@ -100,7 +102,7 @@ tasks:
               archive:
                 - TV/Packs
     template: transmit-series
-}}}
+```
 
 Notices about the packs config:
 - It is important that you are using a private tracker with good torrent structure. Using a public tracker like piratebay is _most likely_ going to cause problems.
@@ -108,8 +110,9 @@ Notices about the packs config:
 
 If you want a decent episode and movie downloading config to go alongside this, please use the below:
 
-== General Purpose Config using Trakt.tv ==
-{{{
+## General Purpose Config using Trakt.tv
+
+```
 #Make sure to run as --discover-now --no-cache
 secrets: secrets.yml
 templates:
@@ -276,7 +279,7 @@ tasks:
     set:
       content_filename: "{{ series_name }} - {{ series_id }} ({{ quality|upper }})"
     template: transmit-series
-}}}
+```
 
 Notices about both of my configs:
 - I don't need to worry about where to put my files as I have a bash script that executes Filebot on the files.

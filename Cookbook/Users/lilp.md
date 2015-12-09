@@ -21,7 +21,7 @@ Each party to its renaming files of the form (TvShowsName - SXXEXX - Quality).
 Each party moves files ending in a shape file (VotreChemin/TvShowsName/SXX/).
 The movie part move the finish file in to a folder.
 
-{{{
+```
 #Envois de mail lors de l'ajout d'un DL
 #Sending mail when dl start
 email:
@@ -77,11 +77,11 @@ templates:
       - Workaholics
     inputs:
       - html:
-          url: "http://www.t411.io/torrents/search/?cat=210&subcat=433&term[17][]=721&term[7][]=16&term[7][]=15&term[7][]=1162&term[7][]=12&term[7][]=1174&term[7][]=1175&page={{i}}"
+          url: "http://www.t411.io/torrents/search/?cat=210&subcat=433&term[17](/17)[]=721&term[7](/7)[]=16&term[7](/7)[]=15&term[7](/7)[]=1162&term[7](/7)[]=12&term[7](/7)[]=1174&term[7](/7)[]=1175&page={{i}}"
           increment: True
           title_from: title
           links_re:
-          - "^http://www.t411.io/torrents/[^/]+(?!/)[^/]+$"
+          - "^http://www.t411.io/torrents/[^/](/^/)+(?!/)[^/](/^/)+$"
     deluge:
       content_filename: "{{series_name}} - {{series_id}} - {{quality}}"
       movedone: "/Series/{{ series_name }}/{{'S%02d'|format(series_season)}}"
@@ -97,11 +97,11 @@ templates:
       - Simpson
     inputs:
       - html:
-          url: "http://www.t411.io/torrents/search/&cat=210&subcat=637&term[17][]=541&term[7][]=16&term[7][]=15&term[7][]=1162&term[7][]=12&term[7][]=1174&term[7][]=1175&page={{i}}"
+          url: "http://www.t411.io/torrents/search/&cat=210&subcat=637&term[17](/17)[]=541&term[7](/7)[]=16&term[7](/7)[]=15&term[7](/7)[]=1162&term[7](/7)[]=12&term[7](/7)[]=1174&term[7](/7)[]=1175&page={{i}}"
           increment: True
           title_from: title
           links_re:
-          - "^http://www.t411.io/torrents/[^/]+(?!/)[^/]+$"
+          - "^http://www.t411.io/torrents/[^/](/^/)+(?!/)[^/](/^/)+$"
 
 
     deluge:
@@ -123,11 +123,11 @@ templates:
       - The Simpsons
     inputs:
       - html:
-          url: "http://www.t411.io/torrents/search/?cat=210&subcat=637&term[17][]=721&term[7][]=16&term[7][]=15&term[7][]=1162&term[7][]=12&term[7][]=1174&term[7][]=1175&page={{i}}"
+          url: "http://www.t411.io/torrents/search/?cat=210&subcat=637&term[17](/17)[]=721&term[7](/7)[]=16&term[7](/7)[]=15&term[7](/7)[]=1162&term[7](/7)[]=12&term[7](/7)[]=1174&term[7](/7)[]=1175&page={{i}}"
           increment: True
           title_from: title
           links_re:
-          - "^http://www.t411.io/torrents/[^/]+(?!/)[^/]+$"
+          - "^http://www.t411.io/torrents/[^/](/^/)+(?!/)[^/](/^/)+$"
     deluge:
       content_filename: "{{series_name}} - {{series_id}} - {{quality}}"
       movedone: "/Series/{{ series_name }}/{{'S%02d'|format(series_season)}}"
@@ -208,7 +208,7 @@ tasks:
             sub_category:
               - VOSTFR
               - HDrip-1080p
-}}}
+```
 
 
 PS : Je tiens à remercier olygraph2, lildadou3 et jonybat pour leurs aides

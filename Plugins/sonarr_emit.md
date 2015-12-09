@@ -1,30 +1,34 @@
-= Sonarr emit =
+# Sonarr emit
 
-This plugin creates an [wiki:Entry Entry] for the first missing episode for every show as defined in [http://sonarr.tv Sonarr] .
+This plugin creates an [Entry](/Entry) for the first missing episode for every show as defined in [Sonarr](http://sonarr.tv) .
 
-This plugin can be used in combination with several plugins, like [wiki:Plugins/discover discover] to search for new episodes to download, or [wiki:Plugins/set_series_begin set_series_begin] to reset the first episode for configured series, and so on.[[BR]].
+This plugin can be used in combination with several plugins, like [discover](/Plugins/discover) to search for new episodes to download, or [set_series_begin](/Plugins/set_series_begin) to reset the first episode for configured series, and so on.[[BR]].
 
-== Plugin Settings ==
+## Plugin Settings
 
 Currently the following settings are required:
 {{{#!div style="margin-left: 25px"
-||= Option =||= Description =||
-||'''base_url'''||This is the URL of your Sonarr installation (usually http://localhost). Default port is 80. ||
-||'''api_key'''||This is API key of your Sonarr installation (can be found under setting->general->security)  ||
+
+| = Option = | = Description = |
+| --- | --- |
+| **base_url** | This is the URL of your Sonarr installation (usually http://localhost). Default port is 80.  |
+| **api_key** | This is API key of your Sonarr installation (can be found under setting->general->security)   |
 }}}
 The following settings are optional:
 {{{#!div style="margin-left: 25px"
-||= Option =||= Description =||
-||'''port'''||This is the port used by your Sonarr installation (usually 8989). Use if port is different than 80. ||
-||'''include_ended'''|| Decides whether to retrieve ended shows. Default is True ||
-||'''only_monitored'''|| Retrieves only [https://github.com/Sonarr/Sonarr/wiki/Monitoring-Series-and-Episodes monitored] shows on Sonarr. Default is False ||
-||'''page_size'''|| Defines the number of results to be retunred with every page of the API request. Set to 50 by default. Can be changed in order to resolve performance issues.
 
-=== Example: set_series_begin plugin ===
+| = Option = | = Description = |
+| --- | --- |
+| **port** | This is the port used by your Sonarr installation (usually 8989). Use if port is different than 80.  |
+| **include_ended** |  Decides whether to retrieve ended shows. Default is True  |
+| **only_monitored** |  Retrieves only [monitored](https://github.com/Sonarr/Sonarr/wiki/Monitoring-Series-and-Episodes) shows on Sonarr. Default is False  |
+||**page_size**|| Defines the number of results to be retunred with every page of the API request. Set to 50 by default. Can be changed in order to resolve performance issues.
 
-This example shows how the sonarr_emit plugin could be used with the [wiki:Plugins/set_series_begin set_series_begin] plugin in order to set the first episode for all monitored and running shows as defined in [http://sonarr.tv Sonarr]:
+### Example: set_series_begin plugin
 
-{{{
+This example shows how the sonarr_emit plugin could be used with the [set_series_begin](/Plugins/set_series_begin) plugin in order to set the first episode for all monitored and running shows as defined in [Sonarr](http://sonarr.tv):
+
+```
   set-series-begin-from-sonarr:
       sonarr_emit:
         base_url: '{{ secrets.credentials.sonarr.url }}'
@@ -33,13 +37,14 @@ This example shows how the sonarr_emit plugin could be used with the [wiki:Plugi
         include_ended: false
       accept_all: yes
       set_series_begin: yes
-}}}
+```
 
-=== Example: discover_plugin === 
+### Example: discover_plugin
 
-This example shows how the sonarr_emit plugin could be used with the [wiki:Plugins/discover discover] plugin in order to download the first missing episode for all monitored and running shows as defined in [http://sonarr.tv Sonarr]:
 
-{{{
+This example shows how the sonarr_emit plugin could be used with the [discover](/Plugins/discover) plugin in order to download the first missing episode for all monitored and running shows as defined in [Sonarr](http://sonarr.tv):
+
+```
  discover_from_sonarr_task:
       discover:
         what:
@@ -53,4 +58,4 @@ This example shows how the sonarr_emit plugin could be used with the [wiki:Plugi
               verified: yes
       all_series: yes
       download: /download
-}}}
+```
