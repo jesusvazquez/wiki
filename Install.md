@@ -1,3 +1,9 @@
+---
+import:
+  - InstallWizard
+---
+{{InstallWizard}}
+
 [[Include(wiki:InstallWizard)]]
 
 ### Alternative route / Advanced
