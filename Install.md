@@ -1,10 +1,9 @@
 ---
 import:
-  - InstallWizard
+  - example-tmpl
 ---
-{{InstallWizard}}
 
-[[Include(wiki:InstallWizard)]]
+{{> InstallWizard}}
 
 ### Alternative route / Advanced
 
