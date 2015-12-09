@@ -1,6 +1,6 @@
 ---
 import:
-  - example-tmpl
+  - InstallWizard
 ---
 
 {{> InstallWizard}}
